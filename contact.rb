@@ -28,13 +28,13 @@ class Contact
 
   # This method should return all of the existing contacts
   def self.all
-
+    @@contacts
   end
 
   # This method should accept an id as an argument
   # and return the contact who has that id
   def self.find
-
+    
   end
 
   # This method should allow you to specify
