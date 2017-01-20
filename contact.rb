@@ -14,7 +14,8 @@ class Contact
     @last_name = last_name
     @email = email
     @note = note
-
+    @id = @@id
+    @@id += 1
   end
 
   # This method should call the initializer,
