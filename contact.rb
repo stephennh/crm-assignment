@@ -1,4 +1,12 @@
+require "./crm"
+
 class Contact
+
+  attr_reader :id
+  attr_writer :first_name, :last_name, :email, :note
+
+  @@contacts = []
+  @@id = 1
 
   # This method should initialize the contact's attributes
   def initialize(first_name, last_name, email, note)
@@ -11,8 +19,10 @@ class Contact
 
   # This method should call the initializer,
   # store the newly created contact, and then return it
-  def self.create
-
+  def self.create(first_name, last_name, email, note)
+    new_contact = Contact.new(first_name, last_name, email, note)
+    @@contacts << new_contact
+    return new_contact
   end
 
   # This method should return all of the existing contacts
