@@ -52,13 +52,32 @@ class CRM
 
   def modify_existing_contact
     print "What is the updated First Name:"
-    first_name = gets.chomp
+    new_first_name = gets.chomp
+    if new_first_name = first_name
+      @first_name
+    else
+      new_first_name = @first_name
+    end
     print "What is the updated Last Name:"
-    last_name = gets.chomp
+    new_last_name = gets.chomp
+    if new_last_name = last_name
+      @last_name
+    else
+      new_last_name = @last_name
     print "What is the updated email:"
-    email = gets.chomp
+    new_email = gets.chomp
+    if new_email = email
+      @email
+    else
+      new_email = @email
+    end
     print "What is the new note"
-    note = gets.chomp
+    new_note = gets.chomp
+    if new_note = note
+      @note
+    else
+      new_note = @note      
+    end
     Contact.update(first_name, last_name, email, note)
   end
 
