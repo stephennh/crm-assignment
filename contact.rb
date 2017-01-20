@@ -1,5 +1,3 @@
-require "./crm"
-
 class Contact
 
   attr_reader :id
@@ -34,7 +32,7 @@ class Contact
   # This method should accept an id as an argument
   # and return the contact who has that id
   def self.find
-    
+
   end
 
   # This method should allow you to specify

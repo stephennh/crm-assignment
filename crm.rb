@@ -1,3 +1,5 @@
+require_relative "contact"
+
 class CRM
 
   def initialize(add, modify, delete, display_all, search_by_attr, exit)
@@ -67,7 +69,7 @@ class CRM
   end
 
   def display_all_contacts
-    
+
   end
 
   def search_by_attribute
