@@ -49,15 +49,25 @@ class CRM
   end
 
   def modify_existing_contact
-
+    print "What is the updated First Name:"
+    first_name = gets.chomp
+    print "What is the updated Last Name:"
+    last_name = gets.chomp
+    print "What is the updated email:"
+    email = gets.chomp
+    print "What is the new note"
+    note = gets.chomp
+    Contact.update(first_name, last_name, email, note)
   end
 
   def delete_contact
-
+    print "What is the name of the contact you'd like to delete?"
+    rem_contact = gets.chomp
+    Contact.delete(rem_contact)
   end
 
   def display_all_contacts
-
+    
   end
 
   def search_by_attribute
