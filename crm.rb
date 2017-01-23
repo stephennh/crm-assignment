@@ -64,6 +64,7 @@ class CRM
       @last_name
     else
       new_last_name = @last_name
+    end
     print "What is the updated email:"
     new_email = gets.chomp
     if new_email = email

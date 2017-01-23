@@ -1,7 +1,7 @@
 class Contact
 
   attr_reader :id
-  attr_writer :first_name, :last_name, :email, :note
+  attr_accessor :first_name, :last_name, :email, :note
 
   @@contacts = []
   @@new_id = 1
@@ -44,12 +44,14 @@ class Contact
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
   def update(attribute, value)
-    @@contacts.each do |contact|
-      # if contact.attribute == value
-      #   new_value = value
-      # end
-      if attribute == "first_name"
-
+    if attribute == "first_name"
+    self.first_name = value
+    elsif attribute == "last_name"
+    self.last_name = value
+    elsif attribute == "email"
+    self.email = value
+    else attribute == "note"
+    self.note = value
     end
   end
 
@@ -59,18 +61,17 @@ class Contact
   # eg. searching for 'first_name', 'Betty' should return the first contact named Betty
   def self.find_by(attribute, value)
     @@contacts.each do |contact|
-    # if contact.attribute == value
-    #   return contact
-    # end
-    if attribute == "first_name"
-      value = first_name
-    elsif attribute == "last_name"
-      value = last_name
-    elsif attribute == "email"
-      value = email
-    else attribute == "note"
-      value = note
-  end
+      # contact.send("first_name") == contact.first_name
+      if attribute == "first_name" && value == contact.first_name
+        return contact
+      elsif attribute == "last_name" && value == contact.last_name
+        return contact
+      elsif attribute == "email" && value == contact.email
+        return contact
+      else attribute == "note" && value == contact.note
+        return contact
+      end
+    end
   end
 
 
