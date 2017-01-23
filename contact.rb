@@ -4,7 +4,7 @@ class Contact
   attr_writer :first_name, :last_name, :email, :note
 
   @@contacts = []
-  @@id = 1
+  @@new_id = 1
 
   # This method should initialize the contact's attributes
   def initialize(first_name, last_name, email, note)
@@ -12,8 +12,8 @@ class Contact
     @last_name = last_name
     @email = email
     @note = note
-    @id = @@id
-    @@id += 1
+    @id = @@new_id
+    @@new_id += 1
   end
 
   # This method should call the initializer,
@@ -21,7 +21,7 @@ class Contact
   def self.create(first_name, last_name, email, note)
     new_contact = Contact.new(first_name, last_name, email, note)
     @@contacts << new_contact
-    return new_contact
+    new_contact
   end
 
   # This method should return all of the existing contacts
@@ -34,7 +34,8 @@ class Contact
   def self.find(id)
     @@contacts.each |contact|
       if contact == contact.id
-        return contact
+      contact
+      end
   end
 
   # This method should allow you to specify
@@ -45,6 +46,7 @@ class Contact
     @@contact.each |contact|
       if contact.attribute == value
         new_value = value
+      end
   end
 
   # This method should work similarly to the find method above
@@ -53,8 +55,11 @@ class Contact
   # eg. searching for 'first_name', 'Betty' should return the first contact named Betty
   def self.find_by(attribute, value)
     @@contacts.each |contact|
-    return contact if contact.attribute == value
+    if contact.attribute == value
+      contact
+    end
   end
+
 
   # This method should delete all of the contacts
   def self.delete_all
@@ -72,5 +77,4 @@ class Contact
   end
 
   # Feel free to add other methods here, if you need them.
-
 end
