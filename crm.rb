@@ -76,7 +76,7 @@ class CRM
     if new_note = note
       @note
     else
-      new_note = @note      
+      new_note = @note
     end
     Contact.update(first_name, last_name, email, note)
   end
@@ -88,11 +88,13 @@ class CRM
   end
 
   def display_all_contacts
-
+    @@contacts.each do [contact]
+      puts @@contacts.full_name
   end
 
-  def search_by_attribute
-
+  def search_by_attribute(attribute)
+    @@contacts.each do [attribute]
+      if @@contacts.
   end
 
 
