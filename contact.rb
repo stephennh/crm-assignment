@@ -41,8 +41,10 @@ class Contact
   # 1. which of the contact's attributes you want to update
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
-  def update
-
+  def update(attribute, value, new_value)
+    @@contact.each |contact|
+      if contact.attribute == value
+        new_value = value
   end
 
   # This method should work similarly to the find method above

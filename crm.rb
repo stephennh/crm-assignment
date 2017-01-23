@@ -46,7 +46,7 @@ class CRM
     print "Enter Email Address:"
     email = gets.chomp
     print "Enter a Note:"
-    note = gets.chomp
+    note = gets
     Contact.create(first_name, last_name, email, note)
   end
 
@@ -72,7 +72,7 @@ class CRM
       new_email = @email
     end
     print "What is the new note"
-    new_note = gets.chomp
+    new_note = gets
     if new_note = note
       @note
     else
